@@ -75,6 +75,13 @@ export class Vector2 {
         return this;
     }
 
+    public set(x: number, y: number) {
+        this.x = x;
+        this.y = y;
+
+        return this;
+    }
+
     public negate() {
         this.multiply(-1);
 

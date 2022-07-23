@@ -83,6 +83,14 @@ export class Vector3 {
         return this;
     }
 
+    public set(x: number, y: number, z: number) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+
+        return this;
+    }
+
     public negate() {
         this.multiply(-1);
 
@@ -102,7 +110,11 @@ export class Vector3 {
     }
 
     public determinant(a: Vector3, b: Vector3) {
-        return new Matrix(3, 3, rotate([[...this.coords], [...a.coords], [...b.coords]], 1) as CreateMatrix<3, 3>).determinant();
+        return new Matrix(
+            3,
+            3,
+            rotate([[...this.coords], [...a.coords], [...b.coords]], 1) as CreateMatrix<3, 3>
+        ).determinant();
     }
 
     public get min() {

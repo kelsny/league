@@ -3,6 +3,7 @@
         "target": "esnext",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
+        "sourceMap": true,
         "module": "esnext",
         "moduleResolution": "node",
         "resolveJsonModule": true,
@@ -12,7 +13,8 @@
         "noImplicitAny": true,
         "alwaysStrict": true,
         "noImplicitReturns": true,
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "exactOptionalPropertyTypes": true
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules"]

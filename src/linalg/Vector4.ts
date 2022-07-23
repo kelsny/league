@@ -91,6 +91,15 @@ export class Vector4 {
         return this;
     }
 
+    public set(x: number, y: number, z: number, w: number) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.w = w;
+
+        return this;
+    }
+
     public negate() {
         this.multiply(-1);
 
@@ -106,7 +115,11 @@ export class Vector4 {
     }
 
     public determinant(a: Vector4, b: Vector4, c: Vector4) {
-        return new Matrix(4, 4, rotate([[...this.coords], [...a.coords], [...b.coords], [...c.coords]], 1) as CreateMatrix<4, 4>).determinant();
+        return new Matrix(
+            4,
+            4,
+            rotate([[...this.coords], [...a.coords], [...b.coords], [...c.coords]], 1) as CreateMatrix<4, 4>
+        ).determinant();
     }
 
     public get min() {
